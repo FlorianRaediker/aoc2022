@@ -1,4 +1,14 @@
 #/!bin/sh
-year=$(date +%Y)
-day=$(date +%-d)
+
+if [ $# -eq 0 ]; then
+    year=$(date +%Y)
+    day=$(date +%-d)
+elif [ $# -eq 2 ]; then
+    year=$1
+    day=$2
+else
+    echo "Usage: $0 [year day]"
+    exit 1
+fi
+
 go run "$year/day$day/day$day.go"
