@@ -1,0 +1,4 @@
+#/!bin/sh
+year=$(date +%Y)
+day=$(date +%-d)
+go run "$year/day$day/day$day.go"

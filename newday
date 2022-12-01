@@ -1,0 +1,7 @@
+#!/bin/sh
+TZ=EST
+year=$(date +%Y)
+day=$(date +%-d)
+mkdir "$year/day$day/"
+cp -n day.go.template "$year/day$day/day$day.go";
+sed -i "s/\$\$\$year/$year/g; s/\$\$\$day/$day/g" "$year/day$day/day$day.go";
