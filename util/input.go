@@ -67,7 +67,7 @@ func GetInputStrings(year, day int) []string {
 }
 
 func GetInputInts(year, day int) (res []int) {
-	return StringSliceToInt(GetInputStrings(year, day))
+	return ToInts(GetInputStrings(year, day))
 }
 
 func GetInputBinary(year, day int) (bitlen int, res []int) {
