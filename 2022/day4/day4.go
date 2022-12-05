@@ -25,17 +25,19 @@ func parseInput(input string) []Assignment {
 	}, strings.Split(input, "\n"))
 }
 
-func part1(input []Assignment) (count int) {
+func part1(input []Assignment) any {
+	count := 0
 	for _, assignment := range input {
 		if (assignment.start1 <= assignment.start2 && assignment.end2 <= assignment.end1) ||
 			(assignment.start2 <= assignment.start1 && assignment.end1 <= assignment.end2) {
 			count += 1
 		}
 	}
-	return
+	return count
 }
 
-func part2(input []Assignment) (count int) {
+func part2(input []Assignment) any {
+	count := 0
 	for _, a := range input {
 		if (a.start1 <= a.start2 && a.start2 <= a.end1) ||
 			(a.start1 <= a.end2 && a.end2 <= a.end1) ||
@@ -44,5 +46,5 @@ func part2(input []Assignment) (count int) {
 			count += 1
 		}
 	}
-	return
+	return count
 }

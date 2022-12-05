@@ -31,7 +31,8 @@ func getPriority(item rune) int {
 	}
 }
 
-func part1(input []Rucksack) (sum int) {
+func part1(input []Rucksack) any {
+	sum := 0
 	for _, rucksack := range input {
 		var item rune = -1
 		for _, r := range rucksack.first {
@@ -44,10 +45,11 @@ func part1(input []Rucksack) (sum int) {
 		}
 		sum += getPriority(item)
 	}
-	return
+	return sum
 }
 
-func part2(input []Rucksack) (sum int) {
+func part2(input []Rucksack) any {
+	sum := 0
 	for i := 0; i < len(input); i += 3 {
 		var badge rune = -1
 		for _, r := range input[i].content {
@@ -60,5 +62,5 @@ func part2(input []Rucksack) (sum int) {
 		}
 		sum += getPriority(badge)
 	}
-	return
+	return sum
 }

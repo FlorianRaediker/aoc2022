@@ -17,11 +17,11 @@ func parseInput(input string) (elves []int) {
 	}, strings.Split(input, "\n\n"))
 }
 
-func part1(elves []int) int {
+func part1(elves []int) any {
 	return util.Max(elves...)
 }
 
-func part2(elves []int) int {
+func part2(elves []int) any {
 	sort.Sort(sort.Reverse(sort.IntSlice(elves)))
 	return elves[0] + elves[1] + elves[2]
 }

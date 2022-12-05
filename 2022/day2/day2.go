@@ -34,16 +34,18 @@ var GAMES = map[string]struct {
 	"C Z": {3 + 3, 6 + 1},
 }
 
-func part1(input []string) (score int) {
+func part1(input []string) any {
+	score := 0
 	for _, round := range input {
 		score += GAMES[round].part1
 	}
-	return
+	return score
 }
 
-func part2(input []string) (score int) {
+func part2(input []string) any {
+	score := 0
 	for _, round := range input {
 		score += GAMES[round].part2
 	}
-	return
+	return score
 }
