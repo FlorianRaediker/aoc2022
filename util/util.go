@@ -13,7 +13,7 @@ func Map[T, K any](f func(T) K, items []T) (res []K) {
 	return
 }
 
-func StringToInt(s string) (i int) {
+func Atoi(s string) (i int) {
 	i, err := strconv.Atoi(s)
 	if err != nil {
 		panic(err)
@@ -23,7 +23,7 @@ func StringToInt(s string) (i int) {
 
 func ToInts(s []string) (res []int) {
 	for _, x := range s {
-		res = append(res, StringToInt(x))
+		res = append(res, Atoi(x))
 	}
 	return
 }
@@ -42,4 +42,13 @@ func Sum(items []int) (sum int) {
 		sum += item
 	}
 	return
+}
+
+func All[T any](f func(T) bool, items []T) bool {
+	for _, item := range items {
+		if !f(item) {
+			return false
+		}
+	}
+	return true
 }
